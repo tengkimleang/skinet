@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+//using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Core.Entities;
@@ -16,7 +17,7 @@ namespace Infrastructure.Data
                 if(!context.ProductBrands.Any()){
                     var brandsData=File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");
                     var brands=JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
-
+                    
                     foreach (var item1 in brands)
                     {
                         context.ProductBrands.Add(item1);
